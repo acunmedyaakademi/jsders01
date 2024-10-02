@@ -1,133 +1,166 @@
-// bu bir yorum satırıdır
+// sabit - constant
+// içeriğini değişmekten korumak istediğimiz verileri
+// burada saklarız. aynı zamanda sadece okunma odaklı olduğu için
+// içerisindeki büyük veriye de daha hızlı erişiriz
+const font = 'system-ui';
+// çok uzunca bir süre endişe etmenize gerek yok. 
+// sadece let kullanabilirsiniz
 
-// programlama dillerinde veriler türlerine göre ayrılır
-// primitive - ilkel - değer tipli veriler
-
-// metin -> string -> js string ifade çift tırnak veya tek tırnak arasında belirtilir
-// sayı, küsüratlı sayı -> number (integer, double, float, decimal) -> tırnak vb yoktur doğrudan yazılır
-// tarih -> date (datetime) -- js de bununla uğraşmayın 🤢
-// binary tipinde 1 ve 0'a benzer true ve false -> bool -> true veya false
-
-// tarayıcı uyarı kutusu
-// alert('Merhaba JS Dünyası');
-
-// geliştirici konsolu
-// developer console
-// 2 yönlü çalışır
-// projemiz, sayfamız, uygulamamız burada loglama vb işlemler yapabilir
-
-// console üzerinden js kodları çalıştırabiliriz. tanımladığımız 
-// verilere erişebiliriz
-
-console.log('çalışma sırası:');
-console.log('sıra 1');
-console.log('sıra 2');
-console.log('sıra 3');
-console.log("orhan'ın javascript kodu");
-console.log('eğitimde "orhan" hoca farkı');
-
-console.log('tırnakla ilgili syntax hatası çözme yöntemi:')
-// karakterleri escape etmek
-// char escaping
-console.log('orhan\'ın konsole örnekleri');
-
-// + operatörü metinsel ifadeleri birleştirir
-console.log('orhan' + 'ekici');
-console.log('orhan' + ' ' + 'ekici');
-
-// konsolu temizler daha önce konsole yazılanları siler
-console.clear();
-
-console.log(123);
-console.log(12123456789);
-console.log(12_123_456_789);
-console.log(12.5);
-console.log(7.5);
-// js küsüratlı sayılara float denir
-// tam sayılara integer denir
-// ikisi de ayrıştırılmaksızın tip olarak Number olur
-// Number = numara
-
-console.clear();
-
-// numaralar üzerinde matematik operatörlerini kullanabiliriz
-// +, -, *, /, %
-// best practice -> okunurluk için
-// operatör kullandığımızda yanlarına ekstra boşluk ekleyelim
-console.log(4 + 6);
-console.log(5 * 4);
-console.log(((4 + 8) * 12) / ((40 * 15) + 25) - 50);
-// parantezler işlem önceliğini değiştirir
-// en önce en içteki parantez çalıştırılır
-
-// console.log('merhaba ' + prompt('Adınız nedir?'));
-
-// veri dönüştürme
-// rakamı metne dönüştürme kısmını pek dert etmeyiz
-// çok ihtiyacımız olmaz
-
-// prompt veya form elemanları bize her zaman string verir
-// string olan veriyi matematik işlemi yapmak için
-// numaraya (number) çevirmemiz gerekiyor
-
-// css'te olduğu gibi büyük küçük harf duyarlılığı var
-// js case sensitive bir dildir
-
-// js anormal bir dil olduğu için kendi kendine bazen
-// tipleri değiştirebiliyor
-// console.log('yaşın: ' + (2024 - Number(prompt('Kaç yılında doğdun?'))));
-// yukarıdaki kod kesinlikle okunurluğu zor bir kod
-// istediğimiz çıktıyı veriyor
-
-// kullanıcı yaşını girsin, doğum yılını söyleyelim
-
-// kullanıcıya şimdiki yılı soralım, doğum yılını soralım
-// yaşını söyleyelim
-
-// kullanıcıya adını soralım, soyadını soralım
-// hoş geldin [ad] [soyad] diyelim
-
-// üsttekine ek olarak doğum yılını da soralım ve
-// hoş geldin [ad] [soyad], şu an [yas]'ındasın diyelim
-
-// kullanıcıdan sınav notu 1, 2, 3 alalım
-// ortalamasını yazdıralım
-
-// bir üçgenin iç açıları toplamı 180'dir
-// birinci ve ikinci açıyı girelim. üçüncüyü yazdıralım.
-
-console.clear();
-
-// değişkenler - variables
-// içine geçici olarak veri sakladığımız alanlar
-// amacı: veriyi tekrar tekrar kullanmak, erişmek
-// bonus: kod okunurluğunu arttırması
-// geçici = ram 
-
-// değişkenlerin isimleri olur
-// programcılıkta değişken isimlendirme standartları vardır
-// clean code - readable code
-
-// değişken tanımlamanın - declaring a variable - anahtar kelime "let"
-// artık "var" kesinlikle kullanmıyoruz 
-
-// değişken tanımlama yöntemi
-// değişken anahtar kelimesi, değişken ismi, atama operatörü, değer
 let ad = 'Orhan';
-// js de değişkenler camelCase formatında isimlendirilir
+let soyad = 'Ekici';
 
-console.log(ad);
+let tamAd = ad + ' ' + soyad;
 
-ad = 'Nihat';
+let yas = 29;
 
-console.log(ad);
+// değişkenleri tiplerini kontrol etmek için
+// typeof kelimesini kullanıyoruz
+// örn: typeof ad
+// not: typeof sonrasında boşluk olması gerekiyor
+// bize cevap verdiği tür string
+
+// yas = yas + 6;
+yas += 6;
+console.log(yas);
+
+yas++;
+console.log(yas);
+// ++yas şeklinde bir kullanım daha var.
+// iki kullanım arasındaki farkı araştırın, keşfedin
+
+let mesaj = 'Merhaba';
+mesaj += ', nasılsınız?';
+console.log(mesaj);
+
+
+// bool tipi değişkenler için isimlendirme önemlidir
+// değişken ismi bool sonucunu ifade edecek şekilde
+// verilmelidir
+
+let isStudent = true;
+let ogrenciMi = true;
+
+let resitMi = false;
+
+// karşılaştırma operatörleri
+// bir veya birden fazla durumu karşılaştırıp 
+// karşılaştırma sonucunda evet veya hayır ->
+// true veya false bilgisi verir
+// karşılaştırma operatörü kullanıldığında
+// veri tipimiz mutlaka bool olur
 
 console.clear();
 
-// değişkeni koyduğum kod kısmında değişkenin içindeki
-// değer yer alır
+// karşılaştırma operatörleri
+// eşitlik == veya === (tip kontrol)
+// eşit değildir != veya !== (tip kontrol)
+// büyüktür >
+// küçüktür <
+// küçük eşittir <=
+// büyük eşittir >=
+// ternary ?
 
-let isim = prompt('Adınız:'); // -> 'Orhan'
-let soyisim = prompt('Soyadınız:');
-let tamAd = isim + ' ' + soyisim;
-console.log('Hoş geldin ' + tamAd);
+let age = 70;
+let gender = 'Man';
+let legalAge = 18;
+// console.log(age >= legalAge);
+
+let isAdult = age >= legalAge;
+
+// yaş, yasal yaştan büyük mü? -> evet veya hayır
+// is age greater than legalAge? yes or no -> true or false
+
+// eğer bool ifadelerin başına ! ünlem işareti
+// koyarsanız durumu tersine çevirir
+// bool sadece true veya false olur
+// !true -> false
+// !false -> true
+
+// mantıksal operatörler
+// && ve operatörü -> hepsi true olmalı
+// || veya operatörü -> herhangi biri true olsa yeter
+// | pipe
+// mantıksal operatörleri boolean döner
+// mantıksal operatörlerin içinde boolean veya 
+// karşılaştırma operatörleri kullanırız
+
+// tip: okunurluğu arttırmak için 
+// parantez içine alabiliriz
+let askereGidebilirMi = (age >= 18) && (gender === 'Man');
+// let askereGidebilirMi = (true && true);
+// istediğiniz kadar yazablirsiniz
+// (true && true && true && true && true && true)
+console.log(askereGidebilirMi);
+
+let topluTasimaUcretsizMi = (age >= 65) || (age <= 6);
+// let topluTasimaUcretsizMi = (true || false);
+// -> true
+
+// // input
+// let inputAge = prompt('Yaşınız?');
+// inputAge = Number(inputAge);
+
+// let isUserAdult = inputAge >= 18;
+
+// // (true || false) && (true || true) && (true || true)
+
+// // kısa koşul yazımı -- shorthand if
+// let oyMesaji = (inputAge >= 18) ? "oy verebilirsin" : "oy vermek için beklemen lazım";
+// // ? ternary operatörü
+// // format olarak karşılaştırma veya bool ifade sonrasında ? (soru işareti) koyulur
+// // sonrasında ister string, ister herhangi bir veri tipinde 
+// // true kısmını
+// // ardından : (iki nokta üst üste) ile ayırıp false kısmını yazabiliriz
+// console.log(oyMesaji);
+
+// programcılıkta akış belirlemek ve programın gidişatını kurgulamak için
+// koşullar kullanılır
+// koşullar 2 türlüdür
+// if else (+) veya switch case (bunu araştırın)
+
+let inputAge = prompt('yaş?');
+inputAge = Number(inputAge);
+if(isNaN(inputAge)) {
+  console.log('Yaşınızı yanlış girdiniz!');
+  // fonksiyon kullanımı ile hatalı durumda
+  // tekrar tekrar girmesini sağlayabiliriz
+}
+let inputName = prompt('adın?');
+
+// if(true) {
+// }
+
+// if (inputName === 'Orhan') {
+//   // süslü parantez içine kod yazdığımızda
+//   // bu kısma scope (kapsama alanı) diyoruz
+//   // koşul gerçekleştiğinde bu scope içindeki
+//   // kodlar çalışır
+//   console.log('Merhaba admin');
+// } else {
+//   // eğer if kısmı çalışmazsa mutlaka bu kod çalışır
+//   console.log('kimsin sen! çık dışarı');
+// }
+
+// if(inputName !== 'Orhan') {
+//   console.log('seni tanımıyorum!');
+// }
+
+if(inputName === 'Orhan' || inputName === 'Nihat') { // bu koşul
+  console.log('Merhaba Admin');
+} else if(inputName === 'Furkan') { // üstteki olmadıysa bu olur mu?
+  console.log('Oo hocam hoş geldiniz');
+} else if(inputName === 'Kıvanç') { // üstteki olmadıysa bu olur mu?
+  console.log('    ');
+} else if(inputName === 'Lucky') { // üstteki olmadıysa bu olur mu?
+  console.log('sana ekstra mama yok');
+} else {
+  // üsttekilerin herhangi biri gerçekleşmezse
+  // bu çalışır
+  console.log('yanlış adres!');
+}
+
+prompt('Taş Kağıt Makas?');
+// kullanıcının seçimini saklıyoruz
+let cpuMove = 'Makas';
+
+// berabere, bilgisayar kazandı, oyuncu kazandı
